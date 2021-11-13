@@ -2,9 +2,7 @@
     <head>
         <title>Tic Tac Toe</title>
         <link rel='icon' href='https://cdn3.iconfinder.com/data/icons/glyph/227/Tic-tac-toe-512.png'>
-        <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Dosis&family=Varela+Round&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="theme-color" content="" >
@@ -123,17 +121,16 @@
             }
             .x{
                box-sizing: border-box;
-                padding: 0px;
                 color:inherit;
                 width:100px;
                 height:100px;
                 float:left;
                 border:3px solid rgba(0,0,0,0.8);
-                cursor: pointer;
+                cursor:pointer;
             }
             .ox{
-                font-size: 80px;
-                font-family: inherit;
+                font-size: 85px;
+                font-family: 'Varela Round', sans-serif;
                 font-weight: bold;
                 text-align: center;
                 box-sizing: border-box;
@@ -191,7 +188,6 @@
               background-color:transparent;
               overflow:hidden;
               transition:background 0.5s;
-              
             }
             .bar div:before {
               content:"";
@@ -233,6 +229,47 @@
               }
             }
             
+        /*::::::::::::mobile:::::::::::*/
+            
+        @media only screen  and (max-width: 600px){
+            #wrapper{
+                position: fixed;
+                width:100%;
+                height:100%;
+                top:0;
+                left:0;
+                margin-left: 0px;
+                margin-top: 0px;
+            }
+            .x{
+                border:2px solid rgba(0,0,0,0.8);
+            }
+            .tb{
+               border-top:0px; 
+            }
+            .db{
+               border-bottom:0px; 
+            }
+            .lb{
+               border-left:0px; 
+            }
+            .rb{
+               border-right:0px; 
+            }
+            #title{
+                font-size: 50px;
+            }
+            #turn{
+                font-size: 25px;
+            }
+            .bar div:before {
+              background:rgba(255,255,255,0.1);
+            }
+            .bar div:after {
+              background:rgba(255,255,255,0.1);
+            }
+        }
+   
         </style>
     </head>
     <body onload='color();checkLine();preload()' >
@@ -426,8 +463,8 @@
             function automateClick(){
                 
                 function cutCheck(ox,rm,random=true){
-                    if (ttt[0][0]==ox && ttt[0][1]==ox){
-                    id='x0y2';
+                    if (ttt[0][0]==ox && ttt[0][1]==ox && ttt[0][2] != rm){
+                        id='x0y2';
                     }else if (ttt[0][0]==ox && ttt[0][2]==ox && ttt[0][1] != rm){
                         id='x0y1';
                     }else if (ttt[0][1]==ox && ttt[0][2]==ox && ttt[0][0] != rm){
