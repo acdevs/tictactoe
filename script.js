@@ -75,14 +75,14 @@ function check(event){
         if(event.innerHTML==''){
             event.innerHTML='O';
             ttt[x][y]=0;
-            turn.innerHTML="thinking";
+            turn.innerHTML="lemme ya!";
         }
     }
     else{
         if(event.innerHTML==''){
             event.innerHTML='X';
             ttt[x][y]=1;
-            turn.innerHTML="make a move";
+            turn.innerHTML="Okay! you";
         }
         
     }
@@ -90,44 +90,44 @@ function check(event){
 
     for (i=0;i<3;i++){
         if (ttt[i][0]==0 && ttt[i][1]==0 && ttt[i][2]==0){
-            turn.innerHTML="'O' Won !";
+            turn.innerHTML="yippee!";
             gameState=false;
             break;
                 }
         else if(ttt[i][0]==1 && ttt[i][1]==1 && ttt[i][2]==1){
-            turn.innerHTML="'X' Won !";
+            turn.innerHTML="Uh oh!";
             gameState=false;
             break;
         }
         else if(ttt[0][i]==0 && ttt[1][i]==0 && ttt[2][i]==0){
-            turn.innerHTML="'O' Won !";
+            turn.innerHTML="yippee!";
             gameState=false;
             break;
         }
         else if(ttt[0][i]==1 && ttt[1][i]==1 && ttt[2][i]==1){
-            turn.innerHTML="'X' Won !";
+            turn.innerHTML="Uh oh!";
             gameState=false;
             break;
         }
     }
         
     if(ttt[0][0]==1 && ttt[1][1]==1 && ttt[2][2]==1){
-        turn.innerHTML="'X' Won !";
+        turn.innerHTML="Uh oh!";
         gameState=false;
 
     }
     else if(ttt[0][0]==0 && ttt[1][1]==0 && ttt[2][2]==0){
-        turn.innerHTML="'O' Won !";
+        turn.innerHTML="yippee!";
         gameState=false;
 
     }
     else if(ttt[0][2]==1 && ttt[1][1]==1 && ttt[2][0]==1){
-        turn.innerHTML="'X' Won !";
+        turn.innerHTML="Uh oh!";
         gameState=false;
 
     }
     else if(ttt[0][2]==0 && ttt[1][1]==0 && ttt[2][0]==0){
-        turn.innerHTML="'O' Won !";
+        turn.innerHTML="yippee!";
         gameState=false;
     }
     if (gameState && clicks == max){
